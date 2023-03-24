@@ -1,0 +1,15 @@
+{
+  "name": "@hacktiv8/eslint-config-base",
+  "version": "0.0.1",
+  "description": "Base ESLint config for Hacktiv8",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h8-exploration/h8-code-convention.git"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/h8-exploration/h8-code-convention/issues"
+  },
+  "homepage": "https://github.com/h8-exploration/h8-code-convention#readme"
+}
