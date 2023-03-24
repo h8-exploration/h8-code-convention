@@ -2,8 +2,9 @@
   "name": "h8-code-convention",
   "version": "0.0.1",
   "description": "Code convention for Hacktiv8",
-  "main": "index.js",
-  "scripts": {},
   "author": "instructor@hacktiv8.com",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/eslint-config-hacktiv8-base"
+  ]
 }
