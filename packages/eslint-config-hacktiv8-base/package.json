@@ -11,5 +11,8 @@
   "bugs": {
     "url": "https://github.com/h8-exploration/h8-code-convention/issues"
   },
-  "homepage": "https://github.com/h8-exploration/h8-code-convention#readme"
+  "homepage": "https://github.com/h8-exploration/h8-code-convention#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0"
+  }
 }
