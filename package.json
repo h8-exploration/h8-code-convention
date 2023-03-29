@@ -5,6 +5,6 @@
   "author": "instructor@hacktiv8.com",
   "license": "UNLICENSED",
   "workspaces": [
-    "packages/eslint-config-hacktiv8-base"
+    "packages/eslint-config-base"
   ]
 }
