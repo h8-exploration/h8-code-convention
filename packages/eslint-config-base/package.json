@@ -12,8 +12,18 @@
     "url": "https://github.com/h8-exploration/h8-code-convention/issues"
   },
   "homepage": "https://github.com/h8-exploration/h8-code-convention#readme",
+  "dependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8.33.0",
+    "prettier": ">= 2.8.3"
+  },
   "devDependencies": {
-    "eslint": "^8.36.0",
-    "eslint-config-airbnb-base": "^15.0.0"
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7"
   }
 }
