@@ -1,5 +1,5 @@
 {
-  "name": "@hacktiv8/eslint-config-base",
+  "name": "@hacktiv8id/eslint-config-base",
   "version": "0.0.1",
   "description": "Base ESLint config for Hacktiv8",
   "main": "index.js",
