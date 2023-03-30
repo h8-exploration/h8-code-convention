@@ -1,29 +1,26 @@
 # Hacktiv8 Base ESlint config
 
 
+## Installation 
+
 To get started, we should install few packages
 
 ```bash
 npm install prettier eslint @hacktiv8id/eslint-config-base -D
 ```
 
-after that, we can create an `.eslintrc` file in the project root directory
+PS: when you install `@hacktiv8id/eslint-config-base` it will create an `.eslintrc.json` if not exists on your project.
 
-```json
-{
-  "extends": "@hacktiv8id/eslint-config-base"
-}
-```
 
-to test it if the lint works
+## Run
 
+Try the linter
 
 ```bash
 npx eslint .
 ```
 
-Add `--fix` to format your code with prettier
-
+Format your code with Prettier
 
 ```bash
 npx eslint . --fix
