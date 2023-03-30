@@ -2,6 +2,7 @@
 
 import * as fs from 'node:fs/promises'
 import * as path from 'node:path';
+import * as process from 'node:process';
 import packageJson from '../package.json'  assert { type: "json" };
 
 
@@ -16,18 +17,38 @@ const ESLINT_RC_FILES = [
   '.eslintrc.yml',
   '.eslintrc.json',
   '.eslintrc',
-];
+].map(getFileLocation)
 
-console.log(packageJson.name, ">> Check if any eslint config exists")
-const result = await Promise.allSettled(ESLINT_RC_FILES.map(fs.access));
-const fileExists = result.find(r => r.status === "fulfilled")
-const eslintInPackageJson = 'eslintConfig' in packageJson
+try {
+  log("Check if any eslint config exists")
 
-if (!fileExists && !eslintInPackageJson) {
-  console.log(packageJson.name, ">> ESLint config not found!")
-  console.log(packageJson.name, ">> Generate new .eslintrc.json")
+  const result = await Promise.allSettled(ESLINT_RC_FILES.map(fs.access));
+  const fileExists = result.find(r => r.status === "fulfilled")
+  const eslintInPackageJson = 'eslintConfig' in packageJson
+
+  if (fileExists || eslintInPackageJson) {
+    log("ESLint config found, all set!")
+    process.exit()
+  }
+
+  log("ESLint config not found")
+  log("Generate new .eslintrc.json")
+  log(process.env.PWD)
+
   const data = new Uint8Array(Buffer.from(FILE_TEMPLATE));
-  const fileLocation = path.join(process.cwd(), FILE_NAME)
+  const fileLocation = getFileLocation(FILE_NAME)
   await fs.writeFile(fileLocation, data)
-  console.log(packageJson.name, ">> .eslintrc.json generated at", fileLocation)
+
+  log(".eslintrc.json generated at", fileLocation)
+} catch (error) {
+  console.log(error)
+}
+
+
+
+function log(str) {
+  console.log(packageJson.name, ">>", str)
+}
+function getFileLocation(fileName) {
+  return path.join(process.cwd(), '../../..', fileName)
 }

@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Hacktiv8 Base ESLint config",
   "main": "index.js",
+  "scripts": {
+    "postinstall": "node ./scripts/generate-eslintrc.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/h8-exploration/h8-code-convention.git"
