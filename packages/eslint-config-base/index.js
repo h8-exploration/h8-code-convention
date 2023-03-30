@@ -1,3 +1,5 @@
+const prettierrc = require('./.prettierrc.json');
+
 module.exports = {
   extends: ['airbnb-base', 'plugin:prettier/recommended'],
   parserOptions: {
@@ -12,16 +14,8 @@ module.exports = {
     // Iterators and Generators: We allow iterator like `for of ` for in` etc
     'no-iterator': 'off',
     'no-restricted-syntax': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'all',
-        tabWidth: 2,
-        semi: true,
-        singleQuote: true,
-        printWidth: 120,
-        bracketSpacing: true,
-      }, // configure Prettier for ESLint
-    ],
+
+    // Prettier config
+    'prettier/prettier': ['error', prettierrc],
   },
 };

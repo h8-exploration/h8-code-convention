@@ -1,7 +1,7 @@
 {
   "name": "@hacktiv8id/eslint-config-base",
   "version": "0.0.1",
-  "description": "Base ESLint config for Hacktiv8",
+  "description": "Hacktiv8 Base ESLint config",
   "main": "index.js",
   "repository": {
     "type": "git",
